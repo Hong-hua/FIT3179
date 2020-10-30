@@ -1,0 +1,86 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 200,
+  "height": 500,
+  "title": "Global coffee consumption",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Hong-hua/FIT3179/main/Global_coffee_consumption.csv"
+  },
+  "params": [
+    {
+      "name": "Country_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "North America",
+          "South America",
+          "Central America & Mexico",
+          "Africa",
+          "Asia & Oceania",
+          "Europe"
+        ],
+        "labels": [
+          "Show All",
+          "North America",
+          "South America",
+          "Central America & Mexico",
+          "Africa",
+          "Asia & Oceania",
+          "Europe"
+        ],
+        "name": "Continent Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "calculate": "datum.Consumption/1000",
+      "as": "Consumption in million 60kg bags"
+    },
+    {
+      "filter": "Country_selection == null || datum.Country == Country_selection"
+    }
+  ],
+  "selection": {
+    "continent_highlight": {
+      "type": "multi",
+      "fields": ["Country"],
+      "bind": "legend"
+    }
+  },
+  "mark": "bar",
+  "encoding": {
+    "column": {"field": "Year", "type": "quantitative"},
+    "x": {"field": "Country", "type": "ordinal", "axis": {"title": ""}},
+    "y": {
+      "field": "Consumption in million 60kg bags",
+      "type": "quantitative",
+      "axis": {"grid": false},
+      "title": "Consumption in million 60kg bags"
+    },
+    "color": {
+      "field": "Country",
+      "type": "ordinal",
+      "scale": {
+        "domain": [
+          "North America",
+          "South America",
+          "Central America & Mexico",
+          "Africa",
+          "Asia & Oceania",
+          "Europe"
+        ],
+        "range": [
+          "#e41a1c",
+          "#984ea3",
+          "#ff7f00",
+          "#a6cee3",
+          "#377eb8",
+          "#a65628"
+        ]
+      }
+    }
+  },
+  "config": {}
+}
