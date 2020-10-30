@@ -20,7 +20,7 @@
   }).catch(console.error);
 </script>
   
-  <div id="symbol_map2"></div>
+<div id="symbol_map2"></div>
   <script type="text/javascript">
 
   var spec3 = "Starbucks_Stores_around_world.json";
@@ -29,5 +29,34 @@
   }).catch(console.error);
 </script>
 
+ <div id="symbol_map3"></div>
+  <script type="text/javascript">
+
+  var spec4 = "visualization.json";
+  vegaEmbed('#symbol_map3', spec4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+ 
+  
+ <div id="symbol_map4"></div>
+  <script type="text/javascript">
+
+  var spec5 = "Cup_price.json";
+  vegaEmbed('#symbol_map4', spec5).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+  
+  <div id="symbol_map5"></div>
+  <script type="text/javascript">
+
+  var spec6 = "global_consuption.json";
+  vegaEmbed('#symbol_map5', spec6).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+  
+  
 </body>
 </html>
