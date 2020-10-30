@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 400,
+  "height": 500,
+  "title": "How much do we pay for a cup of coffee across the country ?",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Hong-hua/FIT3179/main/price_by_state.csv"
+  },
+  "encoding": {
+    "y": {"field": "Coffee_Name", "type": "nominal"},
+    "x": {"field": "State_Name", "type": "ordinal"}
+  },
+  "layer": [
+    {
+      "mark": "rect",
+      "encoding": {
+        "color": {
+          "field": "Price",
+          "type": "quantitative",
+          "title": "Coffee price",
+          "legend": {"direction": "horizontal", "gradientLength": 120}
+        }
+      }
+    },
+    {
+      "mark": "text",
+      "encoding": {"text": {"field": "Price", "type": "quantitative"}}
+    }
+  ],
+  "config": {}
+}
