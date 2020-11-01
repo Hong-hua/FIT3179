@@ -210,6 +210,31 @@
           </div>
         </div>
       </div>
+		
+      <div class="pure-g center">
+        <div class="pure-u-1">
+          <h1 style="background-color: rgb(167, 250, 174);">
+            What is the develop path for the most famous coffee company?
+          </h1>
+        </div>
+      </div>
+      <div class="pure-g center">
+        <div class="pure-u-1-3"></div>
+        <div class="pure-u-1-3">
+          <p>
+            As advanced-economy service sectors surged, commentators pointed to new transformations in labour and drivers of growth. 
+            Scientific and technological innovation alongside higher-skilled, networked workers were giving rise to the 'knowledge economy' and the 'information economy'. The research capacity of a population increasingly tied to its ability to compete.
+            <br>
+          </p>
+        </div>
+        <div class="pure-u-1-3"></div>
+      </div>
+      <div class="pure-g">
+            <div class="pure-u-1">
+              <div id="startbuck"></div>
+            </div>
+      </div>
+		
       <div class="pure-g" style="padding-top: 10px;">
         <div class="pure-u-1" style="display: flex; justify-content: center;">
           <div id="visResearchImpacts"></div>
@@ -219,6 +244,7 @@
     <script>
       // Assign the specification to a local variable vlSpec.
      var total_consumption="global_consuption.json"
+     var starbuck_location = "Starbucks_Stores_around_world.json"
 var vlServicesOverTime = 
       {"$schema":"https://vega.github.io/schema/vega-lite/v4.json","vconcat":[{"layer":[{"mark":{"type":"area","color":"lightgrey"},"data":{"url":"https://raw.githubusercontent.com/joel-brand/FIT3179/main/data/cleaned_wdi_economic_output_breakup.csv","format":{"type":"csv","parse":{"Year":"number","GDP":"number","Industry":"number","Manufacturing":"number"}}},"transform":[{"filter":"datum.Year==1990 || datum.Year==2000 || datum.Year==2011 || datum.Year==2018"},{"filter":"isValid(datum.Services) && datum.Services > 0"}],"encoding":{"x":{"field":"Year","type":"ordinal"},"y":{"field":"Services","type":"quantitative","aggregate":"average"}},"width":400},{"mark":{"type":"line","color":"#5e8aba","opacity":1},"data":{"url":"https://raw.githubusercontent.com/joel-brand/FIT3179/main/data/cleaned_wdi_economic_output_breakup.csv","format":{"type":"csv","parse":{"Year":"number","GDP":"number","Industry":"number","Manufacturing":"number"}}},"transform":[{"filter":"datum[\"Country Name\"] == 'China' &&(datum.Year==1990 || datum.Year==2000 || datum.Year==2011 || datum.Year==2018)"}],"encoding":{"x":{"field":"Year","type":"ordinal"},"y":{"field":"Services","type":"quantitative","axis":{"title":"Services (% of GDP)","grid":false}}},"width":400},{"mark":{"type":"text","color":"#5e8aba","align":"left","dy":-15,"dx":-35},"data":{"url":"https://raw.githubusercontent.com/joel-brand/FIT3179/main/data/cleaned_wdi_economic_output_breakup.csv","format":{"type":"csv","parse":{"Year":"number","GDP":"number","Industry":"number","Manufacturing":"number"}}},"transform":[{"filter":"datum[\"Country Name\"] == 'China' && datum.Year==2018"}],"encoding":{"x":{"field":"Year","type":"ordinal"},"y":{"field":"Services","type":"quantitative","axis":{"grid":false}},"text":{"field":"Country Name","type":"nominal"}},"width":400},{"mark":{"type":"line","color":"#007E20","opacity":1},"data":{"url":"https://raw.githubusercontent.com/joel-brand/FIT3179/main/data/cleaned_wdi_economic_output_breakup.csv","format":{"type":"csv","parse":{"Year":"number","GDP":"number","Industry":"number","Manufacturing":"number"}}},"transform":[{"filter":"datum[\"Country Name\"] == 'United Kingdom' &&(datum.Year==1990 || datum.Year==2000 || datum.Year==2011 || datum.Year==2018)"}],"encoding":{"x":{"field":"Year","type":"ordinal"},"y":{"field":"Services","type":"quantitative","axis":{"title":"Services (% of GDP)","grid":false}}},"width":400},{"mark":{"type":"text","color":"#007E20","align":"left","dy":-15,"dx":-35},"data":{"url":"https://raw.githubusercontent.com/joel-brand/FIT3179/main/data/cleaned_wdi_economic_output_breakup.csv","format":{"type":"csv","parse":{"Year":"number","GDP":"number","Industry":"number","Manufacturing":"number"}}},"transform":[{"filter":"datum[\"Country Name\"] == 'United Kingdom' && datum.Year==2018"}],"encoding":{"x":{"field":"Year","type":"ordinal"},"y":{"field":"Services","type":"quantitative","axis":{"grid":false}},"text":{"field":"Country Name","type":"nominal"}},"width":400}]}],"title":null}
       var vlResearchMapFunding =
