@@ -299,7 +299,7 @@
 	  },
 	  "layer": [
 	    {
-	      "mark": "rect",
+	      "mark": {"type":"rect","tooltip": {"content": "data"}}，
 	      "encoding": {
 		"color": {
 		  "field": "Price",
@@ -337,7 +337,7 @@
 		      {"category": "LATTE", "value": 39}
 		    ]
 		  },
-		  "title": "Total cups sold in coffee bars and cafes in Australia in 2017",
+		  "title": "%Total cups sold in coffee bars and cafes in Australia in 2017",
 		  "encoding": {
 		    "theta": {"field": "value", "type": "quantitative", "stack": true},
 		    "color": {
@@ -369,10 +369,10 @@
 		    }
 		  },
 		  "layer": [
-		    {"mark": {"type": "arc", "outerRadius": 90, "cornerRadius": 45}},
+		    {"mark": {"type": "arc", "outerRadius": 90, "cornerRadius": 45,"tooltip": {"content": "data"}}},
 		    {
 		      "mark": {"type": "text", "radius": 100, "color": "brown"},
-		      "encoding": {"text": {"field": "value", "type": "quantitative","format":".1f%"}}
+		      "encoding": {"text": {"field": "value", "type": "quantitative"}}
 		    }
 		  ],
 		  "view": {"stroke": null},
@@ -414,7 +414,7 @@
 	  },
 	  "layer": [
 	    {
-	      "mark": "circle",
+	      "mark": "circle"
 	      "encoding": {
 		"size": {
 		  "field": "value",
