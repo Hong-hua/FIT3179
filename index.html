@@ -206,7 +206,7 @@
       </div>
        <div class="pure-g center">
  		<div class="pure-u-1">
-		<div class="vis-container" id="starbuck"></div>
+		<div id="starbuck"></div>
 	       </div>
        </div>
 
@@ -346,8 +346,9 @@ var vlServicesOverTime =
       // Embed the visualization in the container with id `vis`
       var opts = {actions:false}
       vegaEmbed('#total_consumption', vltotal_consumption, opts)
-      vegaEmbed('#starbuck',  vlstarbuck_location, opts)
-    
+ 	vegaEmbed('#starbuck', vlstarbuck_location).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);   
 	vegaEmbed('#Price', visPrice).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
