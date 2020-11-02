@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "weight":400
+  "weight":400,
   "background": "#ffb366",
   "height": 300,
   "description": "A simple pie chart with labels.",
