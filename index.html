@@ -431,7 +431,64 @@
 	}
 
      
-     
+     var visImport={
+	  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+	  "description": "A simple pie chart with embedded data.",
+	  "width": 400,
+	  "height": 500,
+	  "data": {
+	    "values": [
+	      {"category": "European Union ", "value": 6775, "x": -0.2, "y": 6},
+	      {"category": "Japan", "value": 660, "x": 0.5, "y": 6},
+	      {"category": "Norway", "value": 71, "x": 0.4, "y": 6.95},
+	      {"category": "Russian Federation", "value": 506, "x": 0.45, "y": 4.65},
+	      {"category": "Switzerland", "value": 294, "x": 0.2, "y": 6.5},
+	      {"category": "Tunisia", "value": 37, "x": 0.2, "y": 5.5},
+	      {"category": "USA", "value": 2851, "x": 0.2, "y": 7.8}
+	    ]
+	  },
+	  "encoding": {
+	    "y": {
+	      "field": "y",
+	      "type": "quantitative",
+	      "axis": null,
+	      "scale": {"domain": [2.5, 10]}
+	    },
+	    "x": {
+	      "field": "x",
+	      "type": "quantitative",
+	      "axis": null,
+	      "scale": {"domain": [-1, 1]}
+	    }
+	  },
+	  "layer": [
+	    {
+	      "mark": "circle",
+	      "encoding": {
+		"size": {
+		  "field": "value",
+		  "type": "quantitative",
+		  "scale": {
+		    "type": "threshold",
+		    "domain": [100, 300, 500, 1500, 3000],
+		    "range": [1000, 2500, 5000, 7000, 10000, 15000]
+		  }
+		},
+		"color": {"field": "category", "type": "nominal"}
+	      }
+	    },
+	    {
+	      "mark": {"type": "text", "baseline": "line-bottom"},
+	      "encoding": {"text": {"field": "category", "type": "nominal"}}
+	    },
+	    {
+	      "mark": {"type": "text", "baseline": "line-top"},
+	      "encoding": {"text": {"field": "value", "type": "quantitative"}}
+	    }
+	  ],
+	  "view": {"stroke": null},
+	  "config": {}
+	}
      
      
 var vlServicesOverTime = 
