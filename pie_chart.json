@@ -19,13 +19,37 @@
   "title": "Total cups sold in coffee bars and cafes in Australia in 2017",
   "encoding": {
     "theta": {"field": "value", "type": "quantitative", "stack": true},
-    "color": {"field": "category", "type": "nominal", "legend": true}
+    "color": {"field": "category", "type": "nominal", "legend": true,
+     "scale": {
+ "domain": [
+ "CAPPUCCINO",
+ "CHAI",
+ "FLAT WHITE",
+ "HOT CHOCOLATE",
+ "ICED DRINKS",
+ "LATTE",
+ "LONG BLACK",
+ "MOCHA"
+ ],
+ "range": [
+  "#666666",
+  "#1f78b4",
+  "#b2df8a",
+  "#33a02c",
+  "#984ea3",
+  "#e31a1c",
+  "#e7298a",
+  "#ff7f00"	
+ ]
+ }
+}
   },
   "layer": [
     {"mark": {"type": "arc", "outerRadius": 90, "cornerRadius": 45}},
     {
-      "mark": {"type": "text", "radius": 100},
-      "encoding": {"text": {"field": "value", "type": "quantitative"}}
+      "mark": {"type": "text", "radius": 100,"color":"brown"},
+      "encoding": {"text": {"field": "value", "type": "quantitative"}
+    }
     }
   ],
   "view": {"stroke": null},
