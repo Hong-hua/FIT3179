@@ -400,6 +400,7 @@
      var visImport={
 	  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
 	  "description": "A simple pie chart with embedded data.",
+	   "background": "#ffb366",   
 	  "width": 400,
 	  "height": 500,
 	  "data": {
@@ -438,7 +439,8 @@
 		    "type": "threshold",
 		    "domain": [100, 300, 500, 1500, 3000],
 		    "range": [1000, 2500, 5000, 7000, 10000, 15000]
-		  }
+		  },
+		"legend": null
 		},
 		"color": {"field": "category", "type": "nominal"}
 	      }
