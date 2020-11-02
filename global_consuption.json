@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 200,
+  "width": 500,
   "height": 500,
   "title": "Global coffee consumption",
   "data": {
@@ -49,6 +49,8 @@
       "bind": "legend"
     }
   },
+
+  "hconcat":[{
   "mark": "bar",
   "encoding": {
     "column": {"field": "Year", "type": "quantitative"},
@@ -83,4 +85,40 @@
     }
   },
   "config": {}
+   },
+   {
+     "mark":"line",
+     "encoding":{
+     "x": {"field": "Year", "type": "ordinal", "axis": {"title": ""}},
+    "y": {
+      "field": "Consumption in million 60kg bags",
+      "type": "quantitative",
+      "axis": {"grid": false},
+      "title": "Consumption in million 60kg bags"
+    },
+    "color": {
+      "field": "Country",
+      "type": "ordinal",
+      "scale": {
+        "domain": [
+          "North America",
+          "South America",
+          "Central America & Mexico",
+          "Africa",
+          "Asia & Oceania",
+          "Europe"
+        ],
+        "range": [
+          "#e41a1c",
+          "#984ea3",
+          "#ff7f00",
+          "#a6cee3",
+          "#377eb8",
+          "#a65628"
+        ]
+      }
+   }
+    }
+   }
+   ]
 }
