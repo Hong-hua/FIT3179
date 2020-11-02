@@ -305,7 +305,7 @@
      var vltotal_consumption="global_consuption.json"
      var vlstarbuck_location = {
 	  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-	  "width": 500,
+	  "width": 800,
 	  "height": 500,
 	  "title": "Starbucks Worlds Location",
 	  "projection": {"type": "equalEarth"},
@@ -343,31 +343,38 @@
      
      
      
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     var visPrice  ="Cup_price.json"
+     var visPrice  ={
+	  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+	  "width": 800,
+	  "background": "#ffb366",
+	  "height": 500,
+	  "title": "How much do we pay for a cup of coffee across the country ?",
+	  "data": {
+	    "url": "https://raw.githubusercontent.com/Hong-hua/FIT3179/main/price_by_state.csv"
+	  },
+	  "encoding": {
+	    "y": {"field": "Coffee_Name", "type": "nominal"},
+	    "x": {"field": "State_Name", "type": "ordinal"}
+	  },
+	  "layer": [
+	    {
+	      "mark": "rect",
+	      "encoding": {
+		"color": {
+		  "field": "Price",
+		  "type": "quantitative",
+		  "title": "Coffee price",
+		  "legend": {"direction": "horizontal", "gradientLength": 120}
+		}
+	      }
+	    },
+	    {
+	      "mark": "text",
+	      "encoding": {"text": {"field": "Price", "type": "quantitative","format":"$"}}
+	    }
+	  ],
+	  "config": {}
+	}
      
      
      var visFavoriteCoffee = 
