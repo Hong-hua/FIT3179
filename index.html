@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ZheHua Hong3</title>
+    <title>ZheHua Hong1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css">    
     <style>
@@ -290,7 +290,10 @@ var vlServicesOverTime =
       var opts = {actions:false}
       vegaEmbed('#total_consumption', vltotal_consumption, opts)
       vegaEmbed('#starbuck',  vlstarbuck_location, opts)
-      vegaEmbed('#Price', visPrice, opts)
+    
+	vegaEmbed('#Price', visPrice).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
       vegaEmbed('#favoriteCoffee', visFavoriteCoffee, opts)
       vegaEmbed('#visResearchMapActivity', vlResearchMapActivity, opts)
       vegaEmbed('#visResearchMapEffort', vlResearchMapEffort, opts)
