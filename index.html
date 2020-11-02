@@ -516,25 +516,8 @@ var vlServicesOverTime =
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
       vegaEmbed('#favorite', visFavoriteCoffee, opts)
-      vegaEmbed('#visResearchMapActivity', vlResearchMapActivity, opts)
-      vegaEmbed('#visResearchMapEffort', vlResearchMapEffort, opts)
-      //vegaEmbed('#visBasicVsDev', vlBasicVsDevResearch, opts)
-      //vegaEmbed('#visResearchMetricImpacts', vlResearchMetricsImpact, opts)
-      vegaEmbed('#visResearchImpacts', vlResearchImpacts, opts)
-      function showResearchMap(name) {
-        var effortMap = document.getElementById("visResearchMapEffort");
-        var fundingMap = document.getElementById("visResearchMapFunding");
-        var activityMap = document.getElementById("visResearchMapActivity");
-        effortMap.style.display = (name=="effort") ? "block" : "none";
-        fundingMap.style.display = (name=="funding") ? "block" : "none";
-        activityMap.style.display = (name=="activity") ? "block" : "none";
-      }
-      window.addEventListener("load", function(){
-          var fundingMapButton = document.getElementById("fundingButton");
-          showResearchMap("funding");
-          fundingMapButton.focus();
-          window.scrollTo(0,0);
-      });
+      vegaEmbed('#import', visImport, opts)    
+	    
     </script>
   </body>
 </html>  
