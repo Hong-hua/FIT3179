@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ZheHua Hong2</title>
+    <title>ZheHua Hong1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css">    
     <style>
@@ -303,68 +303,138 @@
     <script type="text/javascript">
       // Assign the specification to a local variable vlSpec.
      var vltotal_consumption="global_consuption.json"
-     var vlstarbuck_location = "StarbucksStoresLocation.json"
-     var visPrice  ="Cup_price.json"
-     var visFavoriteCoffee = {
-  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width":400 ,
-  "background": "#ffb366",
-  "height": 300,
-  "description": "A simple pie chart with labels.",
-  "data": {
-    "values": [
-      {"category": "CHAI", "value": 2},
-      {"category": "ICED DRINKS", "value": 3},
-      {"category": "MOCHA", "value": 4},
-      {"category": "HOT CHOCOLATE", "value": 4},
-      {"category": "LONG BLACK", "value": 8},
-      {"category": "CAPPUCCINO", "value": 16},
-      {"category": "FLAT WHITE", "value": 24},
-      {"category": "LATTE", "value": 39}
-    ]
-  },
-  "title": "Total cups sold in coffee bars and cafes in Australia in 2017",
-  "encoding": {
-    "theta": {"field": "value", "type": "quantitative", "stack": true},
-    "color": {
-      "field": "category",
-      "type": "nominal",
-      "legend": true,
-      "scale": {
-        "domain": [
-          "CAPPUCCINO",
-          "CHAI",
-          "FLAT WHITE",
-          "HOT CHOCOLATE",
-          "ICED DRINKS",
-          "LATTE",
-          "LONG BLACK",
-          "MOCHA"
-        ],
-        "range": [
-          "#666666",
-          "#1f78b4",
-          "#b2df8a",
-          "#33a02c",
-          "#984ea3",
-          "#e31a1c",
-          "#e7298a",
-          "#ff7f00"
-        ]
-      }
-    }
-  },
-  "layer": [
-    {"mark": {"type": "arc", "outerRadius": 90, "cornerRadius": 45}},
-    {
-      "mark": {"type": "text", "radius": 100, "color": "brown"},
-      "encoding": {"text": {"field": "value", "type": "quantitative"}}
-    }
-  ],
-  "view": {"stroke": null},
-  "config": {}
-}
+     var vlstarbuck_location = {
+	  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+	  "width": "container",
+	  "height": 500,
+	  "title": "Starbucks Worlds Location",
+	  "projection": {"type": "equalEarth"},
+	  "layer": [
+	    {
+	      "data": {
+		"url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/2_symbol_map/js/ne_110m_admin_0_countries.topojson",
+		"format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+	      },
+	      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+	    },
+	    {
+	      "data": {
+		"url": "https://raw.githubusercontent.com/Hong-hua/FIT3179/main/directory.csv"
+	      },
+	      "encoding": {
+		"longitude": {"field": "Longitude", "type": "quantitative"},
+		"latitude": {"field": "Latitude", "type": "quantitative"}
+	      },
+	      "layer": [
+		{
+		  "mark": {"type": "circle", "tooltip": {"content": "data"}},
+		  "color": {
+		    "field": "Country",
+		    "type": "category",
+		    "scale": {"scheme": "reds"}
+		  }
+		}
+	      ]
+	    }
+	  ],
+	  "config": {}
+	}
 
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     var visPrice  ="Cup_price.json"
+     
+     
+     var visFavoriteCoffee = 
+	 {
+		  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+		  "width":400 ,
+		  "background": "#ffb366",
+		  "height": 300,
+		  "description": "A simple pie chart with labels.",
+		  "data": {
+		    "values": [
+		      {"category": "CHAI", "value": 2},
+		      {"category": "ICED DRINKS", "value": 3},
+		      {"category": "MOCHA", "value": 4},
+		      {"category": "HOT CHOCOLATE", "value": 4},
+		      {"category": "LONG BLACK", "value": 8},
+		      {"category": "CAPPUCCINO", "value": 16},
+		      {"category": "FLAT WHITE", "value": 24},
+		      {"category": "LATTE", "value": 39}
+		    ]
+		  },
+		  "title": "Total cups sold in coffee bars and cafes in Australia in 2017",
+		  "encoding": {
+		    "theta": {"field": "value", "type": "quantitative", "stack": true},
+		    "color": {
+		      "field": "category",
+		      "type": "nominal",
+		      "legend": true,
+		      "scale": {
+			"domain": [
+			  "CAPPUCCINO",
+			  "CHAI",
+			  "FLAT WHITE",
+			  "HOT CHOCOLATE",
+			  "ICED DRINKS",
+			  "LATTE",
+			  "LONG BLACK",
+			  "MOCHA"
+			],
+			"range": [
+			  "#666666",
+			  "#1f78b4",
+			  "#b2df8a",
+			  "#33a02c",
+			  "#984ea3",
+			  "#e31a1c",
+			  "#e7298a",
+			  "#ff7f00"
+			]
+		      }
+		    }
+		  },
+		  "layer": [
+		    {"mark": {"type": "arc", "outerRadius": 90, "cornerRadius": 45}},
+		    {
+		      "mark": {"type": "text", "radius": 100, "color": "brown"},
+		      "encoding": {"text": {"field": "value", "type": "quantitative"}}
+		    }
+		  ],
+		  "view": {"stroke": null},
+		  "config": {}
+	}
+
+     
+     
+     
+     
 var vlServicesOverTime = 
       {"$schema":"https://vega.github.io/schema/vega-lite/v4.json","vconcat":[{"layer":[{"mark":{"type":"area","color":"lightgrey"},"data":{"url":"https://raw.githubusercontent.com/joel-brand/FIT3179/main/data/cleaned_wdi_economic_output_breakup.csv","format":{"type":"csv","parse":{"Year":"number","GDP":"number","Industry":"number","Manufacturing":"number"}}},"transform":[{"filter":"datum.Year==1990 || datum.Year==2000 || datum.Year==2011 || datum.Year==2018"},{"filter":"isValid(datum.Services) && datum.Services > 0"}],"encoding":{"x":{"field":"Year","type":"ordinal"},"y":{"field":"Services","type":"quantitative","aggregate":"average"}},"width":400},{"mark":{"type":"line","color":"#5e8aba","opacity":1},"data":{"url":"https://raw.githubusercontent.com/joel-brand/FIT3179/main/data/cleaned_wdi_economic_output_breakup.csv","format":{"type":"csv","parse":{"Year":"number","GDP":"number","Industry":"number","Manufacturing":"number"}}},"transform":[{"filter":"datum[\"Country Name\"] == 'China' &&(datum.Year==1990 || datum.Year==2000 || datum.Year==2011 || datum.Year==2018)"}],"encoding":{"x":{"field":"Year","type":"ordinal"},"y":{"field":"Services","type":"quantitative","axis":{"title":"Services (% of GDP)","grid":false}}},"width":400},{"mark":{"type":"text","color":"#5e8aba","align":"left","dy":-15,"dx":-35},"data":{"url":"https://raw.githubusercontent.com/joel-brand/FIT3179/main/data/cleaned_wdi_economic_output_breakup.csv","format":{"type":"csv","parse":{"Year":"number","GDP":"number","Industry":"number","Manufacturing":"number"}}},"transform":[{"filter":"datum[\"Country Name\"] == 'China' && datum.Year==2018"}],"encoding":{"x":{"field":"Year","type":"ordinal"},"y":{"field":"Services","type":"quantitative","axis":{"grid":false}},"text":{"field":"Country Name","type":"nominal"}},"width":400},{"mark":{"type":"line","color":"#007E20","opacity":1},"data":{"url":"https://raw.githubusercontent.com/joel-brand/FIT3179/main/data/cleaned_wdi_economic_output_breakup.csv","format":{"type":"csv","parse":{"Year":"number","GDP":"number","Industry":"number","Manufacturing":"number"}}},"transform":[{"filter":"datum[\"Country Name\"] == 'United Kingdom' &&(datum.Year==1990 || datum.Year==2000 || datum.Year==2011 || datum.Year==2018)"}],"encoding":{"x":{"field":"Year","type":"ordinal"},"y":{"field":"Services","type":"quantitative","axis":{"title":"Services (% of GDP)","grid":false}}},"width":400},{"mark":{"type":"text","color":"#007E20","align":"left","dy":-15,"dx":-35},"data":{"url":"https://raw.githubusercontent.com/joel-brand/FIT3179/main/data/cleaned_wdi_economic_output_breakup.csv","format":{"type":"csv","parse":{"Year":"number","GDP":"number","Industry":"number","Manufacturing":"number"}}},"transform":[{"filter":"datum[\"Country Name\"] == 'United Kingdom' && datum.Year==2018"}],"encoding":{"x":{"field":"Year","type":"ordinal"},"y":{"field":"Services","type":"quantitative","axis":{"grid":false}},"text":{"field":"Country Name","type":"nominal"}},"width":400}]}],"title":null}
       var vlResearchMapFunding =
