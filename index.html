@@ -149,19 +149,6 @@
       </div>
       <div class="pure-g center">
         <div class="pure-u-2-3">
-          <div class="pure-g">
-            <div class="pure-u-1">
-              <p>
-                <b>The Dominance of Services</b>
-                <br>
-                Below we see for a number of countries the % of their GDP in each major economic sector versus their economic fitness.
-                <br>
-                Economic fitness is a World Bank measure of "a country's diversification and ability to produce complex good on a globally competitive scale".
-                <br>
-                The green lines show linear regressions, and bigger bubbles have larger GDP.
-              </p>
-            </div>
-          </div>
           <div class="vis-container" id="import"></div>
         </div>
       </div>		
@@ -389,7 +376,7 @@
 		    {"mark": {"type": "arc", "outerRadius": 90, "cornerRadius": 45}},
 		    {
 		      "mark": {"type": "text", "radius": 100, "color": "brown"},
-		      "encoding": {"text": {"field": "value", "type": "quantitative","format":"%"}}
+		      "encoding": {"text": {"field": "value", "type": "quantitative","format":".1f%"}}
 		    }
 		  ],
 		  "view": {"stroke": null},
@@ -401,7 +388,7 @@
 	  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
 	  "description": "A simple pie chart with embedded data.",
 	   "background": "#ffb366",   
-	  "width": 400,
+	  "width": 600,
 	  "height": 500,
 	  "data": {
 	    "values": [
