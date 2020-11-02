@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": "container",
+  "width": 500,
   "background": "#ffb366",
   "height": 500,
   "title": "Global coffee consumption",
