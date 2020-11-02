@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ZheHua Hong2</title>
+    <title>ZheHua Hong1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css">    
     <style>
@@ -231,7 +231,7 @@
       </div>
        <div class="pure-g center">
         <div class="pure-u-1">
-            <div class="vis-container" id="Price"></div>
+            <div id="Price"></div>
 	</div>
        </div>	
 		
@@ -255,7 +255,7 @@
         <div class="pure-u-1-3"></div>
       </div>
 
-      <div class="vis-container" id="favoriteCoffee"></div>
+      <div id="favoriteCoffee"></div>
 
 		
       <div class="pure-g" style="padding-top: 10px;">
@@ -264,7 +264,7 @@
         </div>
       </div>
     </div>
-    <script>
+    <script type="text/javascript">
       // Assign the specification to a local variable vlSpec.
      var vltotal_consumption="global_consuption.json"
      var vlstarbuck_location = "StarbucksStoresLocation.json"
@@ -346,6 +346,7 @@ var vlServicesOverTime =
       // Embed the visualization in the container with id `vis`
       var opts = {actions:false}
       vegaEmbed('#total_consumption', vltotal_consumption, opts)
+	    
  	vegaEmbed('#starbuck', vlstarbuck_location).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);   
